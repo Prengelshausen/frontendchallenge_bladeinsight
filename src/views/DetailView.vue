@@ -2,7 +2,7 @@
   <div>
     <div class="grid lg:grid-cols-2 items-center shadow-md rounded-md m-8 p-12">
       <div class="mb-4 lg:mb-0">
-        <img :src="country.flags.svg" :alt="country.flags.alt">
+        <img class="border" :src="country.flags.svg" :alt="country.flags.alt">
       </div>
       <div class="flex flex-col">
         <div class="mb-6">
@@ -19,7 +19,8 @@
           <p v-if="country.borders">Border Countries: 
             <router-link v-for="(bc,index) of country.borders" :key="index" :to="`/detail/${bc}`" class="text-sky-500">
               {{ bc }}, 
-            </router-link></p>
+            </router-link>
+          </p>
           <p v-else>Border Countrie(s): No Border Countries</p>
         </div>
         <a class="w-fit self-center mt-4 font-bold text-sky-500" :href="country.maps.googleMaps" target="_blank" rel="noopener noreferrer">Check out {{ country.name.common }} on Google Maps</a>
